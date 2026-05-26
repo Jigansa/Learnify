@@ -10,6 +10,7 @@ import Leaderboard from './pages/Leaderboard';
 import UserProfile from './pages/UserProfile';
 import Tutors from './pages/Tutors';
 import BookingsDashboard from './pages/BookingsDashboard';
+import Chat from './pages/Chat';
 
 function App() {
   return (
@@ -37,6 +38,7 @@ function App() {
               <Route path="/profile/:id" element={<UserProfile />} />
               <Route path="/tutors" element={<Tutors />} />
               <Route path="/bookings" element={<BookingsDashboard />} />
+              <Route path="/chat" element={<Chat />} />
             </Routes>
           </main>
         </div>

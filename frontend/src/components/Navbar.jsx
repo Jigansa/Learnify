@@ -1,7 +1,7 @@
 import { useContext } from 'react';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
 import { AuthContext } from '../context/AuthContext';
-import { BookOpen, LogOut, Home, User as UserIcon, Calendar, Trophy, Users } from 'lucide-react';
+import { BookOpen, LogOut, Home, User as UserIcon, Calendar, Trophy, Users, MessageCircle } from 'lucide-react';
 import Button from './ui/Button';
 
 export default function Navbar() {
@@ -39,6 +39,9 @@ export default function Navbar() {
                 </Link>
                 <Link to="/bookings" className={navLinkClass('/bookings')}>
                   <Calendar className="h-4 w-4 sm:mr-1.5" /><span className="hidden lg:block">Bookings</span>
+                </Link>
+                <Link to="/chat" className={navLinkClass('/chat')}>
+                  <MessageCircle className="h-4 w-4 sm:mr-1.5" /><span className="hidden lg:block">Chat</span>
                 </Link>
                 <div className="w-px h-6 bg-slate-200 mx-1 sm:mx-2 shrink-0"></div>
                 <Link to={`/profile/${user._id}`} className="flex items-center text-ink hover:opacity-80 font-bold px-2 py-2 text-sm transition-spring sm:mr-2 shrink-0">

@@ -27,6 +27,25 @@ const io = new Server(server, {
 io.on('connection', (socket) => {
   console.log(`User connected: ${socket.id}`);
 
+  socket.on('joinRoom', (room) => {
+    if (room) {
+      socket.join(room);
+      console.log(`Socket ${socket.id} joined room ${room}`);
+    }
+  });
+
+  socket.on('sendMessage', (payload) => {
+    const message = {
+      ...payload,
+      createdAt: payload.createdAt || new Date().toISOString(),
+    };
+    if (payload.room) {
+      io.to(payload.room).emit('receiveMessage', message);
+    } else {
+      io.emit('receiveMessage', message);
+    }
+  });
+
   socket.on('disconnect', () => {
     console.log(`User disconnected: ${socket.id}`);
   });

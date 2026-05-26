@@ -39,7 +39,7 @@ export default function Home() {
             <h3 className="text-2xl font-bold flex items-center mb-2"><Sparkles className="w-6 h-6 mr-2" /> Join the Community!</h3>
             <p className="mb-6 font-medium text-brand-100">Sign in to ask questions, earn points, and book top tutors natively.</p>
             <div className="flex gap-4">
-               <Link to="/login"><Button className="bg-white text-ink hover:bg-slate-100 border-none shadow-none">Log in</Button></Link>
+               <Link to="/login"><Button className="bg-brand-800 text-white hover:bg-brand-900 border-none shadow-none">Log in</Button></Link>
                <Link to="/register"><Button className="bg-brand-800 text-white hover:bg-brand-900 border-none shadow-none">Sign up</Button></Link>
             </div>
           </div>
